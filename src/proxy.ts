@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 const protectedRoutes = ["/profile", "/orders", "/wishlist", "/cart", "/checkout"]
 
-const authRoutes = ["/login", "/register", "/forget-password","/reset-password"]
+const authRoutes = ["/login", "/signup", "/forget-password","/reset-password"]
 
 export default function Proxy(request: NextRequest) {
   const {pathname}=request.nextUrl
