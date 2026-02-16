@@ -27,7 +27,7 @@ import {
   getLoggedUserWishlist,
 } from "@/features/wishlist/server/wishlist.action";
 
-export default function FeaturedProducts({ info: _info }: { info: Product }) {
+export default function FeaturedProducts() {
   const [products, setProducts] = useState<Product[]>([]);
   // const [_loading, _setLoading] = useState(true);
   const dispatch = useAppDispatch();
@@ -70,7 +70,7 @@ export default function FeaturedProducts({ info: _info }: { info: Product }) {
       if (response) {
         // console.log(response);
         if (response.status === "success") {
-          toast.success(response.message || "Added to wishlist");
+          toast.success( "Added to wishlist");
           const wishlistResponse = await getLoggedUserWishlist();
           if (wishlistResponse?.data) {
             dispatch(setWishlist(wishlistResponse.data));

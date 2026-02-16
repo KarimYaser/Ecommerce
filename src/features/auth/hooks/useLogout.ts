@@ -13,7 +13,7 @@ export default function UseLogout() {
     dispatch(setAuthInfo({ isAuthenticated: false, userInfo: null }));
     toast("Logged out successfully");
     setTimeout(() => {
-      router.refresh("/login");
+      router.push("/login");
     }, 3000);
   };
 

@@ -8,7 +8,7 @@ export const loginSchema = z.object({
 
   password: z.string().nonempty("Password is required"),
 
-  rememberMe: z.boolean().default(false),
+  rememberMe: z.boolean(),
 });
 
 export type loginFormValues = z.infer<typeof loginSchema>;

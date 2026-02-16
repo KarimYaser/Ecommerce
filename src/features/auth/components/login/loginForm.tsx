@@ -19,9 +19,7 @@ import { useRouter } from "next/navigation";
 import loginAction from "../../server/login.actions";
 import { setToken } from "../../server/auth.actions";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import { setAuthInfo } from "../../store/auth.slice";
-import { AppState } from "@/store/store";
 
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);

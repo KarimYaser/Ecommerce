@@ -68,7 +68,7 @@ export default function ProductInfo({ product }: { product: Product }) {
       if (response) {
         // console.log(response);
         if (response.status === "success") {
-          toast.success(response.message || "Added to wishlist");
+          toast.success("Added to wishlist");
           const wishlistResponse = await getLoggedUserWishlist();
           if (wishlistResponse?.data) {
             dispatch(setWishlist(wishlistResponse.data));

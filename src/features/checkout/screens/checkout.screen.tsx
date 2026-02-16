@@ -18,17 +18,13 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, CheckoutFormValues } from "../schemas/checkout.schema";
 import { useState, useEffect } from "react";
-import createCashOrder, {
-  default as createOnlineOrder,
-} from "../server/checkout.actions";
-import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
-import { clearCart } from "@/features/cart/store/cart.slice";
-
 import {
   createCashOrder as createCashOrderAction,
   createOnlineOrder as createOnlineOrderAction,
 } from "../server/checkout.actions";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { clearCart } from "@/features/cart/store/cart.slice";
 
 export default function CheckoutScreen() {
   const cart = useAppSelector((state) => state.cart);
