@@ -58,8 +58,13 @@ export default function FeaturedProducts() {
         }
       }
       // console.error(error);
-    } catch (_error) {
-      toast.error("Failed to add product to cart.");
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Failed to add product to cart.";
+      if (errorMessage.includes("logged in")) {
+        toast.error("You must log in");
+      } else {
+        toast.error(errorMessage || "Failed to add product to cart.");
+      }
       // console.error(error);
     }
   };

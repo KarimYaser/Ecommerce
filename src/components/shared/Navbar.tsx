@@ -298,7 +298,8 @@ export default function Navbar() {
               className="background fixed inset-0 bg-black/50 z-30"
             ></div>
             <div className="offcanvas animate-slide-in  space-y-7 fixed top-0 left-0 w-80 h-full bg-white z-40 p-6">
-              <div className="flex justify-between items-center mb-6">
+              <div onClick={toggleMenu}
+              className="flex justify-between items-center mb-6">
                 <Link href="/" className="">
                   <Image src={logo} alt="Logo" width={150} height={50} />
                 </Link>

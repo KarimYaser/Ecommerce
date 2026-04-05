@@ -57,7 +57,12 @@ export default function ProductInfo({ product }: { product: Product }) {
         }
       }
     } catch (error) {
-      toast.error("Failed to add product to cart.");
+      const errorMessage = error instanceof Error ? error.message : "Failed to add product to cart.";
+      if (errorMessage.includes("logged in")) {
+        toast.error("You must log in");
+      } else {
+        toast.error(errorMessage || "Failed to add product to cart.");
+      }
       // console.error(error);
     }
   };

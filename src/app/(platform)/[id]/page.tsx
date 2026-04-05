@@ -1,7 +1,7 @@
 export default function ProductDetailsPage() {
   return (
     <>
-      <h1>Product details page</h1>
+      <h1>not codded yet</h1>
     </>
   );
 }
